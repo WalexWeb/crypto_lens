@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -10,7 +11,14 @@ const Header = () => {
   return (
     <header>
       <div className="main-container inner">
-        <Link href="/">CryptoLens</Link>
+        <Link href="/">
+          <Image
+            src="/logo.svg"
+            alt="Crypto Lens Logo"
+            width={220}
+            height={220}
+          />
+        </Link>
 
         <nav>
           <Link
