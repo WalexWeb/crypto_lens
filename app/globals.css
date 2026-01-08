@@ -252,6 +252,30 @@
   }
 }
 
+#candlestick-chart {
+  @apply p-3 mt-5 rounded-lg bg-dark-500;
+
+  .chart-header {
+    @apply flex flex-col gap-3 xl:flex-row xl:items-center mb-4 font-semibold text-[#e6eef8] text-[20px];
+  }
+
+  .button-group {
+    @apply flex gap-1 xl:gap-2 items-center;
+  }
+
+  .config-button {
+    @apply rounded-sm border-0 cursor-pointer px-2.5 py-2 text-xs xl:text-sm text-purple-100 hover:bg-dark-400 hover:text-white;
+  }
+
+  .config-button-active {
+    @apply rounded-sm px-2.5 py-1.5 border-0 cursor-pointer text-sm text-gray-900 bg-green-500;
+  }
+
+  .chart {
+    @apply w-full min-h-50;
+  }
+}
+
 /* Scrollbar для таблицы */
 .custom-scrollbar [data-slot="table-container"] {
   overflow-y: auto;
