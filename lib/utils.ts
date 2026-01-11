@@ -29,6 +29,7 @@ export function convertOHLCData(data: OHLCData[]) {
     );
 }
 
+// Форматирование процентного изменения с одной десятичной точкой и знаком процента
 export function formatPercentage(change: number | null | undefined): string {
   if (change === null || change === undefined) {
     return "0.0%";

@@ -252,6 +252,42 @@
   }
 }
 
+#categories {
+  @apply pt-8 mt-5 w-full bg-dark-500 rounded-xl overflow-hidden;
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold mb-2 pl-5;
+  }
+
+  .category-cell {
+    @apply pl-5 font-bold;
+  }
+
+  .top-coins-cell {
+    @apply flex gap-1 mr-5;
+
+    img {
+      @apply rounded-full py-2;
+    }
+  }
+
+  .change-header-cell {
+    @apply font-medium;
+  }
+
+  .change-cell {
+    @apply flex flex-1 gap-1 items-center pl-2 text-center font-medium;
+  }
+
+  .market-cap-cell {
+    @apply font-medium;
+  }
+
+  .volume-cell {
+    @apply font-medium;
+  }
+}
+
 #candlestick-chart {
   @apply p-3 mt-5 rounded-lg bg-dark-500;
 

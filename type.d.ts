@@ -106,4 +106,14 @@ interface CoinDetailsData {
   tickers: Ticker[];
 }
 
+// Categories
+interface Category {
+  name: string;
+  top_3_coins: string[];
+  market_cap_change_24h: number;
+  market_cap: number;
+  volume_24h: number;
+}
+
+// Utils
 type QueryParams = Record<string, string | number | boolean | undefined>;
