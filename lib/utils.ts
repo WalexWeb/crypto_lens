@@ -28,3 +28,11 @@ export function convertOHLCData(data: OHLCData[]) {
       (item, index, arr) => index === 0 || item.time !== arr[index - 1].time
     );
 }
+
+export function formatPercentage(change: number | null | undefined): string {
+  if (change === null || change === undefined) {
+    return "0.0%";
+  }
+  const formattedChange = change.toFixed(1);
+  return `${formattedChange}%`;
+}

@@ -1,5 +1,5 @@
 import { fetchCoinData } from "@/lib/coingecko.actions";
-import { cn } from "@/lib/utils";
+import { cn, formatPercentage } from "@/lib/utils";
 import { TrendingDown, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -40,7 +40,7 @@ const columns: DataTableColumn<TrendingCoin>[] = [
             ) : (
               <TrendingDown width={16} height={16} />
             )}
-            {Math.abs(item.data.price_change_percentage_24h.usd).toFixed(2)}%
+            {formatPercentage(item.data.price_change_percentage_24h.usd)}
           </p>
         </div>
       );
