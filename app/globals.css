@@ -151,8 +151,28 @@
 }
 
 @layer components {
+  .container {
+    @apply px-4 sm:px-6 mx-auto max-w-360;
+  }
+
   .main-container {
     @apply py-6 md:py-12 mx-auto px-4 sm:px-6 max-w-360 w-full space-y-6 md:space-y-6;
+  }
+
+  .badge {
+    @apply font-medium mt-2 h-fit py-1 flex items-center gap-1;
+  }
+
+  .badge-up {
+    @apply bg-green-600/20! text-green-600!;
+  }
+
+  .badge-down {
+    @apply bg-red-500/20! text-red-500!;
+  }
+
+  .skeleton {
+    @apply bg-dark-400/60;
   }
 
   header {
@@ -309,6 +329,151 @@
 
   .chart {
     @apply w-full min-h-50;
+  }
+}
+
+/* Fallback */
+#trending-coins-fallback {
+  @apply w-full flex flex-col justify-center h-full py-4 bg-dark-500 rounded-xl;
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold mb-2 px-5;
+  }
+
+  .trending-coins-table {
+    @apply bg-dark-500 overflow-hidden;
+
+    .name-cell {
+      @apply font-bold;
+    }
+
+    .name-link {
+      @apply pl-1 md:pl-2 py-1 md:py-2 xl:py-1 flex items-center gap-2 md:gap-3;
+    }
+
+    .name-image {
+      @apply rounded-full size-8 md:size-9;
+    }
+
+    .name-line {
+      @apply h-4 w-24;
+    }
+
+    .change-cell {
+      @apply font-medium py-4 pr-3 md:pr-5;
+    }
+
+    .price-cell {
+      @apply font-bold pr-5 text-sm max-w-full truncate;
+    }
+
+    .price-change {
+      @apply flex gap-1 items-center text-sm font-medium;
+    }
+  }
+
+  .change-line {
+    @apply h-4 w-16;
+  }
+
+  .price-line {
+    @apply h-4 w-20;
+  }
+
+  .change-icon {
+    @apply h-3.5 w-3.5 rounded-full;
+  }
+}
+
+#coin-overview-fallback {
+  @apply w-full h-full xl:col-span-2 px-2 bg-dark-500 rounded-xl;
+
+  .header {
+    @apply flex-1 mb-2 flex gap-2 md:gap-3;
+  }
+
+  .header-image {
+    @apply w-10 h-10 md:w-14 md:h-14 rounded-full;
+  }
+
+  .info {
+    @apply flex flex-col gap-2;
+  }
+
+  .header-line-sm {
+    @apply h-3 w-24 md:w-28;
+  }
+
+  .header-line-lg {
+    @apply h-7 w-36 md:w-44;
+  }
+
+  .period-button-skeleton {
+    @apply h-7 w-9 md:w-10 rounded-sm;
+  }
+
+  .chart {
+    @apply h-90;
+  }
+
+  .chart-skeleton {
+    @apply h-full w-full rounded-xl;
+  }
+}
+
+#categories-fallback {
+  @apply pt-8 mt-5 w-full bg-dark-500 rounded-xl overflow-hidden;
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold mb-2 pl-5;
+  }
+
+  .category-cell {
+    @apply pl-5 font-bold;
+  }
+
+  .top-gainers-cell {
+    @apply flex gap-1 mr-5;
+  }
+
+  .change-header-cell {
+    @apply font-medium;
+  }
+
+  .change-cell {
+    @apply flex gap-1 items-center pl-2 text-center font-medium;
+  }
+
+  .market-cap-cell {
+    @apply font-medium;
+  }
+
+  .volume-cell {
+    @apply font-medium;
+  }
+
+  .category-skeleton {
+    @apply h-4 w-32;
+  }
+
+  .coin-skeleton {
+    @apply h-7 w-7 rounded-full;
+  }
+
+  .value-skeleton-sm {
+    @apply h-4 w-16;
+  }
+
+  .value-skeleton-md {
+    @apply h-4 w-20;
+  }
+
+  .value-skeleton-lg {
+    @apply h-4 w-24;
+  }
+
+  .change-icon {
+    @apply h-3.5 w-3.5 rounded-full;
   }
 }
 
