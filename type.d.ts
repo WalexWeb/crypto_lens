@@ -161,3 +161,57 @@ interface Category {
 
 // Utils
 type QueryParams = Record<string, string | number | boolean | undefined>;
+
+// Websocket
+
+interface Trade {
+  price?: number;
+  timestamp?: number;
+  type?: string;
+  amount?: number;
+  value?: number;
+}
+
+interface ExtendedPriceData {
+  usd: number;
+  coin?: string;
+  price?: number;
+  change24h?: number;
+  marketCap?: number;
+  volume24h?: number;
+  timestamp?: number;
+}
+
+interface UseWebsocketProps {
+  coinId: string;
+  poolId: string;
+  liveInterval?: "1s" | "1m";
+}
+
+interface UseWebsocketReturn {
+  price: ExtendedPriceData | null;
+  trades: Trade[];
+  ohlcv: OHLCData | null;
+  isConnected: boolean;
+}
+
+interface WebSocketMessage {
+  type?: string;
+  c?: string;
+  ch?: string;
+  i?: string;
+  p?: number;
+  pp?: number;
+  pu?: number;
+  m?: number;
+  v?: number;
+  vo?: number;
+  o?: number;
+  h?: number;
+  l?: number;
+  t?: number;
+  to?: number;
+  ty?: string;
+  channel?: string;
+  identifier?: string;
+}
