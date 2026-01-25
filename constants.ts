@@ -52,7 +52,7 @@ export const getCandlestickConfig = (): CandlestickSeriesPartialOptions => ({
 // Конфигурация графика
 export const getChartConfig = (
   height: number,
-  timeVisible: boolean = true
+  timeVisible: boolean = true,
 ): DeepPartial<ChartOptions> => ({
   width: 0,
   height,
@@ -100,3 +100,8 @@ export const getChartConfig = (
       "$" + price.toLocaleString(undefined, { maximumFractionDigits: 2 }),
   },
 });
+
+export const LIVE_INTERVAL_BUTTONS: { value: "1s" | "1m"; label: string }[] = [
+  { value: "1s", label: "1s" },
+  { value: "1m", label: "1m" },
+];

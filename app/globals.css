@@ -232,6 +232,78 @@
   }
 }
 
+#coin-details-page {
+  @apply py-12 px-4 sm:px-6 mx-auto max-w-360 size-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center gap-6 xl:gap-10 justify-center;
+
+  .primary {
+    @apply size-full xl:col-span-2;
+  }
+
+  .secondary {
+    @apply size-full max-lg:mt-8 lg:col-span-1;
+  }
+
+  .exchange-section {
+    @apply w-full mt-8 space-y-4;
+
+    h4 {
+      @apply text-xl md:text-2xl font-semibold mb-2;
+    }
+  }
+
+  .exchange-table {
+    @apply bg-dark-500 rounded-xl overflow-hidden mt-5;
+
+    .exchange-name {
+      @apply text-green-500 font-bold;
+
+      a {
+        @apply absolute inset-0 z-10;
+      }
+    }
+
+    .pair {
+      @apply font-medium h-full flex gap-1 py-4 pr-5 space-x-2;
+
+      p {
+        @apply truncate max-w-20 md:max-w-30 h-full;
+      }
+    }
+
+    .price-cell {
+      @apply font-medium;
+    }
+
+    .time-cell {
+      @apply pr-5 text-end;
+    }
+  }
+
+  .details {
+    @apply w-full mt-8 space-y-4;
+
+    h4 {
+      @apply text-xl md:text-2xl font-semibold mb-2 pb-3;
+    }
+
+    .details-grid {
+      @apply rounded-lg grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-3 sm:gap-5;
+
+      li {
+        @apply text-base bg-dark-500 px-5 py-6 rounded-lg flex flex-col gap-3;
+
+        .label {
+          @apply text-purple-100;
+        }
+
+        .link {
+          @apply flex items-center text-green-500 gap-1;
+        }
+      }
+    }
+  }
+}
+
 #trending-coins {
   @apply w-full flex flex-col justify-center h-full py-4 bg-dark-500 rounded-xl;
 
@@ -567,6 +639,157 @@
 
     .page-link-active {
       @apply bg-green-500! text-dark-900 font-semibold;
+    }
+  }
+}
+#coin-header {
+  @apply space-y-5 w-full;
+
+  h3 {
+    @apply text-3xl font-medium;
+  }
+
+  .info {
+    @apply flex gap-3 items-center;
+
+    img {
+      @apply size-11.25 sm:size-12.5 xl:size-19.25;
+    }
+  }
+
+  .price-row {
+    @apply flex gap-4;
+
+    h1 {
+      @apply text-3xl sm:text-5xl xl:text-6xl font-semibold;
+    }
+  }
+
+  .stats {
+    @apply grid grid-cols-3 mt-8 gap-4 sm:gap-6 w-fit;
+
+    li {
+      @apply text-base border-r last:border-none border-purple-600 flex flex-col gap-2;
+
+      .label {
+        @apply text-purple-100 max-sm:text-sm;
+      }
+
+      .value {
+        @apply flex gap-1 flex-1 items-end text-base font-medium;
+      }
+    }
+  }
+}
+
+#converter {
+  @apply w-full space-y-5;
+
+  h4 {
+    @apply text-2xl font-semibold;
+  }
+
+  .panel {
+    @apply space-y-2 bg-dark-500 px-5 py-7 rounded-lg;
+  }
+
+  .input-wrapper {
+    @apply bg-dark-400 h-12 w-full rounded-md flex items-center justify-between py-4 pr-4;
+
+    .input {
+      @apply flex-1 text-lg! border-none font-medium bg-dark-400! focus-visible:ring-0 shadow-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
+    }
+
+    .coin-info {
+      @apply flex items-center gap-1;
+
+      p {
+        @apply font-semibold text-base text-purple-100;
+      }
+    }
+  }
+
+  .divider {
+    @apply relative flex justify-center items-center my-4;
+
+    .line {
+      @apply h-px z-10 w-full bg-dark-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+
+    .icon {
+      @apply size-8 z-20 bg-dark-400 rounded-full p-2 text-green-500;
+    }
+  }
+
+  .output-wrapper {
+    @apply bg-dark-400 h-12 w-full rounded-md flex items-center justify-between py-4 pl-4;
+
+    p {
+      @apply text-base font-medium;
+    }
+
+    .select-trigger {
+      @apply w-fit! border-none! cursor-pointer! h-12! bg-dark-400! hover:bg-dark-400! focus-visible:ring-0!;
+
+      .select-value {
+        @apply font-semibold! text-xs! text-purple-100!;
+      }
+    }
+
+    .select-content[data-converter] {
+      @apply bg-dark-400 max-h-125;
+
+      .select-item {
+        @apply cursor-pointer hover:bg-dark-500!;
+      }
+    }
+  }
+}
+
+#live-data-wrapper {
+  @apply size-full xl:col-span-2;
+
+  .divider {
+    @apply my-8! bg-purple-600!;
+  }
+
+  .trend {
+    @apply w-full;
+
+    h4 {
+      @apply text-xl md:text-2xl font-semibold mb-2 mt-2 pl-2;
+    }
+  }
+
+  .trades {
+    @apply w-full my-8 space-y-4;
+
+    h4 {
+      @apply text-xl md:text-2xl font-semibold mb-2;
+    }
+  }
+
+  .trades-table {
+    @apply bg-dark-500 mt-5 rounded-xl overflow-hidden;
+
+    .price-cell {
+      @apply pl-5 py-5 font-medium;
+    }
+
+    .amount-cell {
+      @apply py-4 font-medium;
+    }
+
+    .value-cell {
+      @apply font-medium;
+    }
+
+    .type-cell {
+      @apply font-medium;
+    }
+
+    .time-cell {
+      @apply pr-5;
     }
   }
 }

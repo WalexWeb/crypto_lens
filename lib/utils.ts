@@ -74,3 +74,25 @@ export const buildPageNumbers = (
 
   return pages;
 };
+
+// Форматирование времени прошедшего с указанной даты
+export function timeAgo(date: string | number | Date): string {
+  const now = new Date();
+  const past = new Date(date);
+  const diff = now.getTime() - past.getTime(); // Разница в миллисекундах
+
+  const seconds = Math.floor(diff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const weeks = Math.floor(days / 7);
+
+  if (seconds < 60) return "just now";
+  if (minutes < 60) return `${minutes} min`;
+  if (hours < 24) return `${hours} hour${hours > 1 ? "s" : ""}`;
+  if (days < 7) return `${days} day${days > 1 ? "s" : ""}`;
+  if (weeks < 4) return `${weeks} week${weeks > 1 ? "s" : ""}`;
+
+  // Возвращаем дату в формате YYYY-MM-DD для дат старее 4 недель
+  return past.toISOString().split("T")[0];
+}

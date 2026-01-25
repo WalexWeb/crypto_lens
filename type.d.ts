@@ -23,6 +23,8 @@ interface CandlestickChartProps {
   children?: React.ReactNode;
   mode?: "historical" | "live";
   initialPeriod?: Period;
+  liveInterval: "1s" | "1m";
+  setLiveInterval: (interval: "1s" | "1m") => void;
 }
 
 // Coins
@@ -214,4 +216,29 @@ interface WebSocketMessage {
   ty?: string;
   channel?: string;
   identifier?: string;
+}
+
+interface PoolData {
+  id: string;
+  address: string;
+  name: string;
+  network: string;
+}
+
+// Live Data Wrapper
+interface LiveDataProps {
+  coinId: string;
+  poolId: string;
+  coin: CoinDetailsData;
+  coinOHLCData?: OHLCData[];
+  children?: React.ReactNode;
+}
+
+interface LiveCoinHeaderProps {
+  name: string;
+  image: string;
+  livePrice: number;
+  livePriceChangePercentage24h: number;
+  priceChangePercentage30d: number;
+  priceChange24h: number;
 }

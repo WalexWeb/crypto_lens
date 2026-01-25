@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 const WS_URL = `${process.env.NEXT_PUBLIC_WS_URL}?x_cg_api_key=${process.env.NEXT_PUBLIC_API_KEY}`;
@@ -136,24 +138,25 @@ export const useWebsocket = ({
 
       unsubscribeAll();
 
-      subscribe('CGSimplePrice', {
-        coin_id: [coinId], action: 'set_tokens'
-      })
-    })
+      subscribe("CGSimplePrice", {
+        coin_id: [coinId],
+        action: "set_tokens",
+      });
+    });
 
-    const poolAddress = poolId?.replace('_', ":");
+    const poolAddress = poolId?.replace("_", ":");
 
     if (poolAddress) {
-      subscribe('OnChainTrade', {
-        'network_id:pool_address': [poolAddress],
-        action: 'set_pools'
-      })
+      subscribe("OnChainTrade", {
+        "network_id:pool_address": [poolAddress],
+        action: "set_pools",
+      });
 
-      subscribe('OnChainOHLCV', {
-        'network_id:pool_address': [poolAddress],
+      subscribe("OnChainOHLCV", {
+        "network_id:pool_address": [poolAddress],
         interval: liveInterval,
-        action: 'set_pools'
-      })
+        action: "set_pools",
+      });
     }
   }, [coinId, poolId, liveInterval]);
 
@@ -162,5 +165,5 @@ export const useWebsocket = ({
     trades,
     ohlcv,
     isConnected,
-  }
+  };
 };
